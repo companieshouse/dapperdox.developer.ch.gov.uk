@@ -29,4 +29,28 @@ else
     export PATH
 fi
 
-# TODO Run dapperdox
+DAPPERDOX=${APP_DIR}/dapperdox
+
+${DAPPERDOX}/dapperdox \
+    -spec-dir=${APP_DIR}/specs/api.ch.gov.uk-specifications/swagger-2.0 \
+    -spec-filename=spec/swagger.json \
+    -spec-filename=spec/filings.json \
+    -spec-filename=spec/streaming.json \
+    -spec-filename=spec/payments.json \
+    -bind-addr=0.0.0.0:${PORT} \
+    -site-url=${DAPPERDOX_DEVELOPER_URL} \
+    -default-assets-dir=${DAPPERDOX}/assets \
+    -theme-dir=${APPDIR}/themes/ \
+    -theme=dapperdox-theme-gov-uk  \
+    -log-level=info \
+    -force-specification-list=true \
+    -spec-rewrite-url=http://localhost:3123/swagger-2.0 \
+    -spec-rewrite-url=localhost:4003=http://localhost:4005 \
+    -spec-rewrite-url=api.companieshouse.gov.uk=chs-dev:4001 \
+    -document-rewrite-url=http://localhost:4003=http://localhost:4005 \
+    -assets-dir=${APP_DIR}/assets \
+    #-author-show-assets=true \
+    #-proxy-path=/developer=http://localhost:4006 \
+    #-tls-key=server.rsa.key \
+    #-assets-dir=./examples/overlay/assets \
+   # -spec-dir=examples/specifications/petstore/ \
