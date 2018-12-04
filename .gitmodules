@@ -1,0 +1,15 @@
+[submodule "dapperdox"]
+	path = dapperdox
+	url = git@github.com:dapperdox/dapperdox.git
+[submodule "specs/api.ch.gov.uk-specifications"]
+	path = specs/api.ch.gov.uk-specifications
+	url = git@github.com:companieshouse/api.ch.gov.uk-specifications.git
+[submodule "specs/account.ch.gov.uk-specifications"]
+	path = specs/account.ch.gov.uk-specifications
+	url = git@github.com:companieshouse/account.ch.gov.uk-specifications.git
+[submodule "specs/document.api.ch.gov.uk-specifications"]
+	path = specs/document.api.ch.gov.uk-specifications
+	url = git@github.com:companieshouse/document.api.ch.gov.uk-specifications.git
+[submodule "themes/dapperdox-theme-gov-uk"]
+	path = themes/dapperdox-theme-gov-uk
+	url = git@github.com:companieshouse/dapperdox-theme-gov-uk.git
