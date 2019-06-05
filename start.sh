@@ -7,9 +7,9 @@ APP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ -z "${MESOS_SLAVE_PID}" ]]; then
     source ~/.chs_env/private_env
     source ~/.chs_env/global_env
-    source ~/.chs_env/developer.gov.uk/env
+    source ~/.chs_env/dapperdox.developer.ch.gov.uk/env
 
-    PORT="${CHS_CH_PORT:=3000}"
+    PORT="${DAPPERDOX_PORT:=4004}"
 else
     PORT="$1"
     CONFIG_URL="$2"
@@ -32,25 +32,21 @@ fi
 DAPPERDOX=${APP_DIR}/dapperdox
 
 ${DAPPERDOX}/dapperdox \
-    -spec-dir=${APP_DIR}/specs/api.ch.gov.uk-specifications/swagger-2.0 \
+    -spec-dir=${PWD}/specs/api.ch.gov.uk-specifications/swagger-2.0 \
     -spec-filename=spec/swagger.json \
-    -spec-filename=spec/filings.json \
     -spec-filename=spec/streaming.json \
-    -spec-filename=spec/payments.json \
     -bind-addr=0.0.0.0:${PORT} \
     -site-url=${DAPPERDOX_DEVELOPER_URL} \
-    -default-assets-dir=${DAPPERDOX}/assets \
-    -theme-dir=${APPDIR}/themes/ \
-    -theme=dapperdox-theme-gov-uk  \
-    -log-level=info \
-    -force-specification-list=true \
     -spec-rewrite-url=http://localhost:3123/swagger-2.0 \
-    -spec-rewrite-url=localhost:4003=http://localhost:4005 \
-    -spec-rewrite-url=api.companieshouse.gov.uk=chs-dev:4001 \
-    -document-rewrite-url=http://localhost:4003=http://localhost:4005 \
-    -assets-dir=${APP_DIR}/assets \
-    #-author-show-assets=true \
-    #-proxy-path=/developer=http://localhost:4006 \
-    #-tls-key=server.rsa.key \
-    #-assets-dir=./examples/overlay/assets \
-   # -spec-dir=examples/specifications/petstore/ \
+    -default-assets-dir=${DAPPERDOX}/assets \
+    -proxy-path=/developer=http://localhost:${CHS_DEVELOPER_MOJO_PORT} \
+    -force-specification-list=true \
+    -assets-dir=${PWD}/assets \
+    -theme-dir=${PWD}/themes/ \
+    -theme=dapperdox-theme-gov-uk  \
+# additional/future options below as they mess up the multi line command if they are in between non commented lines
+#    -spec-filename=spec/filings.json \
+#    -spec-filename=spec/payments.json \
+#    -log-level=info \
+#    -spec-rewrite-url=api.companieshouse.gov.uk=${API_URL} \
+#    -author-show-assets=true \

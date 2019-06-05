@@ -1,4 +1,6 @@
-Navigation: Overview/API Versioning
+Title: API versioning
+Navigation: API versioning
+SortOrder: 80
 
 # API versioning
 
