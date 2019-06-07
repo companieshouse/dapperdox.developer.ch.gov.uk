@@ -29,15 +29,28 @@ else
     export PATH
 fi
 
+# Only public spec files should be added to this block
+SPEC_ARGS="-spec-dir=${PWD}/specs"
+SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0=${DAPPERDOX_DEVELOPER_URL}/api.ch.gov.uk-specifications/swagger-2.0"
+SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
+SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/streaming.json"
+# SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings.json"
+# SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/payments.json"
+
+
+# Only private/internal spec files should be added to this block
+if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
+    echo "Including private specs"
+    SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0-private=${DAPPERDOX_DEVELOPER_URL}/private.api.ch.gov.uk-specifications/swagger-2.0-private"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/chs-kafka-api.json"
+fi
+
+echo "Runing Dapperdox with specs arguments=[${SPEC_ARGS}]"
 DAPPERDOX=${APP_DIR}/dapperdox
 
-${DAPPERDOX}/dapperdox \
-    -spec-dir=${PWD}/specs/api.ch.gov.uk-specifications/swagger-2.0 \
-    -spec-filename=spec/swagger.json \
-    -spec-filename=spec/streaming.json \
+${DAPPERDOX}/dapperdox ${SPEC_ARGS} \
     -bind-addr=0.0.0.0:${PORT} \
     -site-url=${DAPPERDOX_DEVELOPER_URL} \
-    -spec-rewrite-url=http://localhost:3123/swagger-2.0 \
     -default-assets-dir=${DAPPERDOX}/assets \
     -proxy-path=/developer=http://localhost:${CHS_DEVELOPER_MOJO_PORT} \
     -force-specification-list=true \
@@ -45,8 +58,6 @@ ${DAPPERDOX}/dapperdox \
     -theme-dir=${PWD}/themes/ \
     -theme=dapperdox-theme-gov-uk  \
 # additional/future options below as they mess up the multi line command if they are in between non commented lines
-#    -spec-filename=spec/filings.json \
-#    -spec-filename=spec/payments.json \
 #    -log-level=info \
 #    -spec-rewrite-url=api.companieshouse.gov.uk=${API_URL} \
 #    -author-show-assets=true \

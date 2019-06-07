@@ -4,6 +4,9 @@
 [submodule "specs/api.ch.gov.uk-specifications"]
 	path = specs/api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/api.ch.gov.uk-specifications.git
+[submodule "specs/private.api.ch.gov.uk-specifications"]
+	path = specs/private.api.ch.gov.uk-specifications
+	url = git@github.com:companieshouse/private.api.ch.gov.uk-specifications.git
 [submodule "specs/account.ch.gov.uk-specifications"]
 	path = specs/account.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/account.ch.gov.uk-specifications.git
