@@ -32,10 +32,16 @@ fi
 # Only public spec files should be added to this block
 SPEC_ARGS="-spec-dir=${PWD}/specs"
 SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0=${DAPPERDOX_DEVELOPER_URL}/api.ch.gov.uk-specifications/swagger-2.0"
-SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
-SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/streaming.json"
-# SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings.json"
-# SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/payments.json"
+SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json" # public company data api specs
+SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/streaming.json" # public streaming api specs
+
+
+# Pending public spec files should be added to this block
+# This should be used for specs that are going to be public but currently not ready to be made publicly available
+if [[ "${INCLUDE_PENDING_PUBLIC_SPECS}" -eq "1" ]]; then
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings.json" # pending public filing api specs
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/payments.json" # pending public payment api specs
+fi
 
 
 # Only private/internal spec files should be added to this block
