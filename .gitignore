@@ -3,15 +3,6 @@ dapperdox.developer.ch.gov.uk-*.zip
 build.log
 build
 
-# Test output
-test.xml
-
-# Lint output
-lint.txt
-
-# GoLand files
-.idea/
-
 # Mac files
 .DS_Store
 ._*
