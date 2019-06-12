@@ -17,7 +17,7 @@ submodules:
 
 .PHONY: $(dapperdox_bin)
 $(dapperdox_bin):
-	@$(MAKE) -C dapperdox
+	cd "${GOPATH}/src/github.com/companieshouse/dapperdox.developer.ch.gov.uk/dapperdox"; make build
 
 .PHONY: build
 build: submodules $(dapperdox_bin)
