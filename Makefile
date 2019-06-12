@@ -7,6 +7,9 @@ dapperdox_target := dapperdox
 dapperdox_bin    := dapperdox/$(dapperdox_target)
 dapperdox_assets := dapperdox/assets
 
+# has to be inside GOPATH and end in dapperdox
+dapperdox_build_dir := ${GOPATH}/src/github.com/companieshouse/dapperdox
+
 .PHONY: all
 all: build
 
@@ -17,7 +20,10 @@ submodules:
 
 .PHONY: $(dapperdox_bin)
 $(dapperdox_bin):
-	cd "${GOPATH}/src/github.com/companieshouse/dapperdox.developer.ch.gov.uk/dapperdox"; make build
+	mkdir -p $(dapperdox_build_dir)
+	cp -r dapperdox/* "$(dapperdox_build_dir)/"
+	cd "$(dapperdox_build_dir)"; make
+	cp "$(dapperdox_build_dir)/dapperdox" ./dapperdox/
 
 .PHONY: build
 build: submodules $(dapperdox_bin)
