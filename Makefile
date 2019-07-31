@@ -22,7 +22,7 @@ submodules:
 $(dapperdox_bin):
 	mkdir -p $(dapperdox_build_dir)
 	cp -r dapperdox/* "$(dapperdox_build_dir)/"
-	cd "$(dapperdox_build_dir)"; make
+	cd "$(dapperdox_build_dir)"; CGO_ENABLED=0 make
 	cp "$(dapperdox_build_dir)/dapperdox" ./dapperdox/
 
 .PHONY: build
