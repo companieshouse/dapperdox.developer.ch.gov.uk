@@ -27,8 +27,7 @@ You will now be asked which type of application you are registering, choose
 **Streaming API**. 
 
 Fill in your **Application name**, giving it a meaninful description and,
-if appropriate, a list of **Restricted IPs** (see [restricted IPs](/authentication/restrictedips)
-for further details), and when you're done, click **Register**.
+if appropriate, a list of **Restricted IPs** and when you're done, click **Register**.
 
 The hub will register your application, and provide you with a unique
 streaming API key that you will use to authenticate your application every
@@ -62,5 +61,5 @@ ommit the colon '`:`' from the end of the API key before encoding.
 The following curl request authenticates with `Basic` authentication:
 
 ```
-curl -v -u a-streaming-api-key: "https://streaming-api.companieshouse.gov.uk/companyProfile?timepoint=187124872486"
+curl -v -u a-streaming-api-key: "https://streaming-api.companieshouse.gov.uk/companies?timepoint=187124872486"
 ```
