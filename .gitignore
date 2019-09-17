@@ -6,3 +6,5 @@ build
 # Mac files
 .DS_Store
 ._*
+*.iml
+*.xml
