@@ -61,5 +61,5 @@ ommit the colon '`:`' from the end of the API key before encoding.
 The following curl request authenticates with `Basic` authentication:
 
 ```
-curl -v -u a-streaming-api-key: "https://streaming-api.companieshouse.gov.uk/companies?timepoint=187124872486"
+curl -v -u a-streaming-api-key: "https://stream.companieshouse.gov.uk/companies?timepoint=187124872486"
 ```

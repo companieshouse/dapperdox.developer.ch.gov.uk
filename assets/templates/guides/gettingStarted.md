@@ -38,7 +38,7 @@ First steps
 ### Set up a Companies House account
 
 To be able to explore and perform tests with the Companies House API,
-you need to register a [user account](/developer/signin) with Companies
+you need to register a [user account](https://developer.companieshouse.gov.uk/developer/signin) with Companies
 House.
 
 ### Overview

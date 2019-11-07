@@ -11,7 +11,7 @@ API key authentication
 The Companies House API requires authentication credentials, in the form
 of an API key, to be sent with each request.
 
-To obtain an API key, go to [Your applications](/developer/applications)
+To obtain an API key, go to [Your applications](https://developer.companieshouse.gov.uk/developer/applications)
 and register the application with the Companies House Developer Hub as
 an `API Key` application. This will allocate a unique key to the
 application which can be sent with any `GET` request for a public
