@@ -19,13 +19,18 @@ being sent, and the date-time it was published.
 The stream envelope contains the following information:
 ```
 {
-    "company_number": "string",
-    "data": { },
-    "is_delete": "boolean",
-    "kind": "string",
-    "published_at": "date-time",
-    "timepoint": "string",
-    "uri": "string"
+    "event": {
+        "fields_changed": [
+            "string"
+        ],
+        "published_at": "date-time",
+        "timepoint": "string",
+        "type": "string"
+    },
+    "resource_id": "string",
+    "resource_kind": "string",
+    "resource_uri": "string",
+    "data": { }
 }
 ```
 
