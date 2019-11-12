@@ -49,6 +49,7 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     echo "Including private specs"
     SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0-private=http://127.0.0.1:${PORT}/private.api.ch.gov.uk-specifications/swagger-2.0-private"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/chs-kafka-api.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/orders.json"
 fi
 
 echo "Runing Dapperdox with specs arguments=[${SPEC_ARGS}]"
