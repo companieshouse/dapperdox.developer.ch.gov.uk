@@ -24,7 +24,7 @@ The stream envelope contains the following information:
             "string"
         ],
         "published_at": "date-time",
-        "timepoint": "string",
+        "timepoint": "integer",
         "type": "string"
     },
     "resource_id": "string",
