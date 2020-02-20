@@ -5,14 +5,14 @@ SortOrder: 100
 
 The Companies House streaming API gives you access to realtime data changes of
 the information held at Companies House. This delivers the same information
-that is available through the on-demand [REST API](/companies-house-api/reference) `GET`
+that is available through the on-demand [REST API](https://developer.companieshouse.gov.uk) `GET`
 requests, but instead pushes data to your client as it changes, through a
 long-running connection that you first establish.
 
 ## How it works
 
 The streaming endpoints return exactly the same data resources as the
-equivalent on-demand [data API](http://localhost), wrapped in a small JSON
+equivalent on-demand [data API](https://developer.companieshouse.gov.uk), wrapped in a small JSON
 envelope that provides additional metadata, such as what type of resource is
 being sent, and the date-time it was published.
 
