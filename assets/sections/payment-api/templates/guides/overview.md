@@ -82,7 +82,7 @@ hand-back from the Payment Platform:
 1. The application must ensure that the returned `state` matches the nonce
 sent by the application to the Payment Platform during hand-off, and that the application
 has received it only once during a hand-back. This is the application's protection
-against [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
+against [CSRF](https://owasp.org/www-community/attacks/csrf).
 
 2. If the first step passes, the application must validate the status of the payment
 by fetching the `payments` resource and inspecting its `status` member (its URL was
