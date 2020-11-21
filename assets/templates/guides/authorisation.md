@@ -2,11 +2,9 @@ Title: Authorisation
 Navigation: Authorisation
 SortOrder: 50
 
-Authorisation
-=============
+# Authorisation
 
-API key authentication
-----------------------
+## API key authentication
 
 The Companies House API requires authentication credentials, in the form
 of an API key, to be sent with each request.
@@ -26,10 +24,9 @@ Basic authentication is usually made up of a username and password pair;
 the Companies House API takes the username as the API key and ignores
 the password, so can be left blank.
 
-Example
--------
+### Example
 
-### HTTP Basic Authentication
+#### HTTP Basic Authentication
 
 For an API key of my\_api\_key, the following curl request demonstrates
 the setting of the `Authorization` HTTP request header, as defined by
@@ -41,3 +38,8 @@ the setting of the `Authorization` HTTP request header, as defined by
     Host: api.companieshouse.gov.uk
     Authorization: Basic bXlfYXBpX2tleTo=
 
+## OAuth 2.0 authentication
+
+The Companies House API has some functionality that requires OAuth 2.0 authentication for actions that require and end user.
+
+For details on integrating a third party web service with the Companies House OAuth 2.0 service see [the guide here](/companies-house-identity-service/guides/ServerWeb) and the available [API Filing functionality here](/manipulate-company-data-api-filing/reference).
