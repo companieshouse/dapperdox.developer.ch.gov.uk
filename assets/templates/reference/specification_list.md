@@ -1,4 +1,4 @@
-Overlay: true
+Overlay: false
 
 [[banner]]
 [[description]]
