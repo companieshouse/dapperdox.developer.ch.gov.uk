@@ -8,7 +8,7 @@ dapperdox_bin    := dapperdox/$(dapperdox_target)
 dapperdox_assets := dapperdox/assets
 
 # has to be inside GOPATH and end in dapperdox
-dapperdox_build_dir := ${GOPATH}/src/github.com/companieshouse/dapperdox
+dapperdox_build_dir := ${GOPATH}/src/github.com/dapperdox/dapperdox
 
 .PHONY: all
 all: build
