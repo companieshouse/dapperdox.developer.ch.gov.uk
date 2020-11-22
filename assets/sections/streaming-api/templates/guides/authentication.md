@@ -6,12 +6,12 @@ SortOrder: 200
 ## Register for an account
 
 To be able to explore and use the the Companies House streaming API, you need
-to [register](https://developer.companieshouse.gov.uk/developer/signin) a user
+to [register](https://developer.company-information.service.gov.uk/signin) a user
 account with Companies House.
 
 ## Register your application and receive an API key
 
-Visit the [Your Applications](https://developer.companieshouse.gov.uk/developer/applications)
+Visit the [Your Applications](https://developer.company-information.service.gov.uk/manage-applications)
 page of the Companies House Developer Hub. This will show you the REST API and
 streaming API applications you have already registered, and allow you to
 register further applications.

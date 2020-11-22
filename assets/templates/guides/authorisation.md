@@ -9,7 +9,7 @@ SortOrder: 50
 The Companies House API requires authentication credentials, in the form
 of an API key, to be sent with each request.
 
-To obtain an API key, go to [Your applications](https://developer.companieshouse.gov.uk/developer/applications)
+To obtain an API key, go to [Your applications](https://developer.company-information.service.gov.uk/manage-applications)
 and register the application with the Companies House Developer Hub as
 an `API Key` application. This will allocate a unique key to the
 application which can be sent with any `GET` request for a public
@@ -32,10 +32,10 @@ For an API key of my\_api\_key, the following curl request demonstrates
 the setting of the `Authorization` HTTP request header, as defined by
 [RFC2617](https://tools.ietf.org/html/rfc2617).
 
-    curl -XGET -u my_api_key: https://api.companieshouse.gov.uk/company/00000006
+    curl -XGET -u my_api_key: https://api.company-information.service.gov.uk/company/00000006
 
     GET /company/00000006 HTTP/1.1
-    Host: api.companieshouse.gov.uk
+    Host: api.company-information.service.gov.uk
     Authorization: Basic bXlfYXBpX2tleTo=
 
 ## OAuth 2.0 authentication

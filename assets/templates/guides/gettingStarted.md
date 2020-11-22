@@ -30,7 +30,6 @@ First steps
     - [REST web services](#rest-web-services)
     - [The JSON data format](#the-json-data-format)
     - [Authentication](#authentication)
-    - [Explore the API](#explore-the-api)
     - [Developer guidelines](#developer-guidelines)
     - [API rate limits](#api-rate-limits)
     - [Enumerated types](#enumerated-types)
@@ -38,7 +37,7 @@ First steps
 ### Set up a Companies House account
 
 To be able to explore and perform tests with the Companies House API,
-you need to register a [user account](https://developer.companieshouse.gov.uk/developer/signin) with Companies
+you need to register a [user account](https://developer.company-information.service.gov.uk/signin) with Companies
 House.
 
 ### Overview
@@ -81,12 +80,6 @@ Access to all API services requires authentication. The
 [Authorisation](/guides/authorisation)
 page describes the authorisation mechanism used by the Companies House
 API, and how to register your application.
-
-### Explore the API
-
-Each Companies House API reference page contains an embedded "explorer"
-that allows the reader to try out the service *in-situ*, without having
-to write any client code at all.
 
 ### Developer guidelines
 
