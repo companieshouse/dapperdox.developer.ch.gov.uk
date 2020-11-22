@@ -1,6 +1,6 @@
 Overlay: true
 
-[[request-end]]
+[[description]]
 #### Exchange an authorization code
 To exchange an authorization code for an access token, send a "fetch access token" API
 request containing the following parameters:

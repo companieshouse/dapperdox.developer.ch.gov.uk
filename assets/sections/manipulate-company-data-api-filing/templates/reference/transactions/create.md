@@ -1,6 +1,6 @@
 Overlay: true
 
-[[request-body]]
+[[description]]
 The created transaction will be assigned to the user whose `access_token` was used to authorise the API call, and
 if a `company_number` is supplied, will be linked to that company, allowing the company's data to be modified.
 In this case the `company_number` must match the authorising access_token's `company filing permission` scope,
