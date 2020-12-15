@@ -38,6 +38,7 @@ SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/
 # Pending public spec files for API Filing initial release
 if [[ "${INCLUDE_API_FILING_PUBLIC_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=document.api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=account.ch.gov.uk-specifications/swagger-2.0/identity-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json"
