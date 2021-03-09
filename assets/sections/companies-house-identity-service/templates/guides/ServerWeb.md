@@ -27,7 +27,7 @@ involvement and the process flow is as follows:
 - When the end user grants this permission they they will be redirected to the `redirect_uri` provided with a `code` parameter to be used in the next stage.
 
 ### Handling the Redirect back
-- The web server can then use the `code` to exchange for the users `access_token` and `refresh_token` by making a `POST` request to the `/oauth/token` endpoint.
+- The web server can then use the `code` to exchange for the users `access_token` and `refresh_token` by making a `POST` request to the `/oauth2/token` endpoint.
 - This request is not done via a browser but directly from the web server to the Companies House OAuth 2.0 service.
 - This request body includes the `code`, the developers `client_id`, `client_secret` and some other relevant information. The `grant_type` must be set to `authorization_code` to exchange an authorization code for an access token.
 - The Companies House OAuth 2.0 service verifies this request, and if access is permitted, responds with access and refresh tokens.
@@ -35,10 +35,18 @@ involvement and the process flow is as follows:
 
 ### Verifying the access token
 - The web server can verify the access token before using it against other Companies House APIs.
-- To verify the access token the web server should make another request directly (not in the users browser) to the `/oauth/verify` endpoint.
+- To verify the access token the web server should make another request directly (not in the users browser) to the `/oauth2/verify` endpoint.
 
 ### Refreshing an access token
-- When the access token expires, the application can use the `/oauth/token` endpoint again to exchange the refresh token for a new access token. The `grant_type` must be set to `refresh_token` to exchange an refresh token for an access token.
+- When the access token expires, the application can use the `/oauth2/token` endpoint again to exchange the refresh token for a new access token. The `grant_type` must be set to `refresh_token` to exchange an refresh token for an access token.
+
+### Scopes
+
+Scopes are defined against API specs where they are required e.g. manipulate company data API specs for transactions and registered office address APIs. Where scopes are defined in API specs like these basic authorization (API keys) will not be allowed as scopes are only applicable when using OAuth2 bearer authorization.
+
+Scopes map to permissions against API resources using the full domain to the live resource with specific permissions appended to the end after a period. The domain is always the live version even when testing in the sandbox environment e.g. `https://identity.company-information.service.gov.uk/user/profile.read` should be used for permission to read the user profile whether you're integrating with the live or sandbox environment.
+
+When your software redirecte users to sign in with Companies House they will be shown a permission grant screen which will ask them to grant access for your software to perform specific actions. These actions will be mapped from the requested scopes e.g. `https://identity.company-information.service.gov.uk/user/profile.read` will ask for permission to read their user profile (i.e. email address).
 
 ## Example
 
