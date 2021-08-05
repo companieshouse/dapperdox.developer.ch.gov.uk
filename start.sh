@@ -60,6 +60,7 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/orders.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/chd-order-api.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/search.api.gov.uk.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/oracle-query.api.gov.uk.json"
 fi
 
 echo "Runing Dapperdox with specs arguments=[${SPEC_ARGS}]"
