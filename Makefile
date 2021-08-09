@@ -46,6 +46,7 @@ endif
 	cp -r $(themes) $(tmpdir)/
 	cp -r $(assets) $(tmpdir)/
 	cp ./start.sh $(tmpdir)/start.sh
+	cp ./spec_args.sh $(tmpdir)/spec_args.sh
 	cd $(tmpdir) && zip -r ../$(artifact_name)-$(version).zip *
 	rm -rf $(tmpdir)
 
