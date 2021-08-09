@@ -19,6 +19,10 @@ RUN mkdir -m 0600 ~/.ssh \
 
 COPY . ./
 
+RUN env && which git
+
+RUN git submodules init
+
 RUN make
 
 FROM alpine:3.12
