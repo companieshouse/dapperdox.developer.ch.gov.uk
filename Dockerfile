@@ -19,11 +19,7 @@ RUN mkdir -m 0600 ~/.ssh \
 
 COPY . ./
 
-RUN env && which git
-
-RUN git submodule init
-
-RUN make
+RUN git submodule init && git submodule update && make dapperdox/dapperdox
 
 FROM alpine:3.12
 
