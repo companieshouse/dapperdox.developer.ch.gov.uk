@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 # Only public spec files should be added to this block
 SPEC_ARGS="-spec-dir=${PWD}/specs"
 SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0=http://127.0.0.1:${PORT}/api.ch.gov.uk-specifications/swagger-2.0"
