@@ -21,7 +21,7 @@ COPY . ./
 
 RUN env && which git
 
-RUN git submodule init
+RUN git submodules init
 
 RUN make
 
