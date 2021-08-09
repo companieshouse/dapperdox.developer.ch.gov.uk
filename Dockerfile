@@ -19,7 +19,15 @@ RUN mkdir -m 0600 ~/.ssh \
 
 COPY . ./
 
-RUN git submodule init && git submodule update && mkdir -p ${GOPATH}/src/github.com/dapperdox/dapperdox && cp -r dapperdox/* "${GOPATH}/src/github.com/dapperdox/dapperdox/" && cd "${GOPATH}/src/github.com/dapperdox/dapperdox" && CGO_ENABLED=0 go get && go build ${LDFLAGS} && cp "${GOPATH}/src/github.com/dapperdox/dapperdox/dapperdox" /build/dapperdox/
+RUN git submodule init && git submodule update && mkdir -p "${GOPATH}/src/github.com/dapperdox/dapperdox" && cp -r dapperdox/* "${GOPATH}/src/github.com/dapperdox/dapperdox/"
+
+WORKDIR "${GOPATH}/src/github.com/dapperdox/dapperdox"
+
+RUN CGO_ENABLED=0 go get && go build "${LDFLAGS}"
+
+WORKDIR /build
+
+RUN cp "${GOPATH}/src/github.com/dapperdox/dapperdox/dapperdox" /build/dapperdox/
 
 FROM alpine:3.12
 
