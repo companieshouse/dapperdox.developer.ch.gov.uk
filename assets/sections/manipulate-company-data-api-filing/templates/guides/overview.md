@@ -9,7 +9,7 @@ API Filing initially exposes two API services:
 
 - `Transactions API`. This API provides the generic model that encapsulates all other API Filing services. A transaction is best thought of as an envelope for one or more data changes or forms.
 - `Registered Office Address (ROA) API`. This API provides the specific ROA data change functionality. An ROA data change can be added to a transaction before the transaction is submitted to Companies House.
-- `Insolvency API`. This API provides the specific Insolvency data change functionality - for example to open an insolveny case and appoint an insolvency practitioner (equivalent to the paper '600' form). An Insolvency data change can be added to a transaction before the transaction is submitted to Companies House.
+- `Insolvency API`. This API provides the specific insolvency data change functionality - for example to open an insolvency case and appoint an insolvency practitioner (equivalent to the paper '600' form). An insolvency data change can be added to a transaction before the transaction is submitted to Companies House.
 
 # Authentication
 
