@@ -9,6 +9,7 @@ API Filing initially exposes two API services:
 
 - `Transactions API`. This API provides the generic model that encapsulates all other API Filing services. A transaction is best thought of as an envelope for one or more data changes or forms.
 - `Registered Office Address (ROA) API`. This API provides the specific ROA data change functionality. An ROA data change can be added to a transaction before the transaction is submitted to Companies House.
+- `Insolvency API`. This API provides the specific Insolvency data change functionality - for example to open an insolveny case and appoint an insolvency practitioner (equivalent to the paper '600' form). An Insolvency data change can be added to a transaction before the transaction is submitted to Companies House.
 
 # Authentication
 
@@ -22,12 +23,15 @@ All API Filing software will need to sign their users in to Companies House with
 
 - `https://identity.company-information.service.gov.uk/user/profile.read` is required for API Filing and grants permission to read the users profile data.
 
-Depending on the filing functionality the list of scopes may change. However, for the ROA change, the following scope will also be required:
+Depending on the filing functionality the list of scopes may change.
 
-- `https://api.company-information.service.gov.uk/company/{company_number}/registered-office-address.update`
 
-Note that the `{company_number}` placeholder must be filled in with an actual company number e/g/ for company `00000001` this scope would be
-`https://api.company-information.service.gov.uk/company/00000001/registered-office-address.update`.
+| Service/API | Required scope(s) | Additional information |
+|---|---|---|
+| Transactions (pre-requisite for all other APIs) | `https://identity.company-information.service.gov.uk/user/profile.read` | |
+| Registered Office Address (ROA) | `https://api.company-information.service.gov.uk/company/{company_number}/registered-office-address.update` | Note that the `{company_number}` placeholder must be filled in with an actual company number e/g/ for company `00000001` this scope would be `https://api.company-information.service.gov.uk/company/00000001/registered-office-address.update`. |
+| Insolvency | `https://api.company-information.service.gov.uk/company/*/insolvency.write-full` | Due to the sensitivity of insolvency endpoints, this scope can only be granted to a client (i.e. your software) if your client_id is registered with Companies House as a recognised insolvency software - regardless of whether or not the user granting the scope is a registered insolvency practitioner. |
+
 
 Combining multiple scopes is done by space separating them as one string so the requested scope for API Filing an ROA data change for company `00000001` should request the scope:
 
@@ -94,9 +98,9 @@ Companies House have written an example application - [Third Party Test Harness]
 
 When testing any software that integrates with the Companies House API Filing services, you will be able to test using our Sandbox environment.
 
-Sandbox API: `https://api-sandbox.company-information.service.gov.uk`
-Sandbox Identity/OAuth Service: `https://identity-sandbox.company-information.service.gov.uk`
-Sandbox Test Data API: `https://test-data-sandbox.company-information.service.gov.uk`
+- Sandbox API: `https://api-sandbox.company-information.service.gov.uk`
+- Sandbox Identity/OAuth Service: `https://identity-sandbox.company-information.service.gov.uk`
+- Sandbox Test Data API: `https://test-data-sandbox.company-information.service.gov.uk`
 
 The services above allow all API Filing functions and related Public Data APIs functions (such as `GET /company/{company_number}`) for test companies.
 
@@ -120,6 +124,10 @@ For ROA data change submissions made using the Transactions and ROA API's the fo
 
 - Postcode matches one of the postcodes of a Companies House office ("CF143UZ", "BT28BG", "SW1H9EX" or "EH39FF")
 
+For Insolvency data change submissions made using the Transactions and Insolvency APIs, the following scenarios:
+
+- Postcode of the first insolvency practitioner associated with the case matches one of the postcodes of a Companies House office ("CF143UZ", "BT28BG", "SW1H9EX" or "EH39FF")
+
 All other submissions will receive a mock response status of `accepted`.
 
 # Moving To Live
@@ -134,6 +142,6 @@ Once your software has passed testing and you are ready to move to Live, there a
 
 ## Live Responses
 
-In the Live environment, responses will not be mocked. This means that all submissions will be sent to Compaies House for review and if valid will be accepted on to the public register.
+In the Live environment, responses will not be mocked. This means that all submissions will be sent to Companies House for review and if valid will be accepted on to the public register.
 
 Some submissions may require manual inspection which will add a delay to processing. Your software may want to check for accept/reject status by polling the status of the filing using `GET /transactions/{transaction_id}`. While this is perfectly fine and expected, please be sure to obey our rate limiting rules when polling APIs for responses.
