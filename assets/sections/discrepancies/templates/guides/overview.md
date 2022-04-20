@@ -7,7 +7,7 @@ Companies House Discrepancies service allows 3rd party software to report discre
 
 Discrepancies initially exposes one API Service:
 
--`Persons with Significant Control`. This API provides the specific reporting functionality for discrepancies
+- `Persons with Significant Control`. This API provides the specific reporting functionality for discrepancies
  involving Persons with Significant Control. A report can be created, and multiple discrepancies
  can be added before submitting the report to Companies House.
 
@@ -27,16 +27,16 @@ with their user credentials. This requirement does not apply in live sandbox.
 ## Scopes
 All Discrepancies software will need to sign their users in to Companies House with one or more `scopes`.
 
--`https://identity.company-information.service.gov.uk/user/profile.read` is required
+- `https://identity.company-information.service.gov.uk/user/profile.read` is required
  for Discrepancies and grants permission to read the users profile data.
 
--`https://identity.company-information.service.gov.uk/psc-discrepancy-reports.write-full` is required
+- `https://identity.company-information.service.gov.uk/psc-discrepancy-reports.write-full` is required
  for Persons with Significant Control submissions
 
 Combining multiple scopes is done by space separating them as one string so the requested scope for Discrepancies
 for Persons with Significant Control submissions should be:
 
--`https://identity.company-information.service.gov.uk/user/profile.read`
+- `https://identity.company-information.service.gov.uk/user/profile.read`
 `https://api.company-information.service.gov.uk/psc-discrepancy-reports.write-full`
 
 # Report Discrepancies
