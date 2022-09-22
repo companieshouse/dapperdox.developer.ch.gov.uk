@@ -3,7 +3,7 @@
 ## What is this repo used for ?
 
 The main task implemented by this repo is to source the specs and to render them as inspectable documentation on the 2 dev portals:
-- public: https://developer-specs.company-information.service.gov.uk/
+- public:  https://developer-specs.company-information.service.gov.uk/
 - private: https://developer-specs.cidev.aws.chdev.org/
 
 ## Which specs are registered ?
@@ -26,7 +26,7 @@ Not all the json files which are listed in a `-specifications` repo will then be
 Some might be missing (ex. at the time of writing:
 [company-accounts.json](https://github.com/companieshouse/api.ch.gov.uk-specifications/blob/e7ed000/swagger-2.0/spec/company-accounts.json))
 
-The list of public specs rendered is for example quickly inspectable looking at stderr:
+The list of public specs rendered can be quickly checked, for example, looking at stderr:
 
     2022/09/21 06:53:23 Registering specifications
     2022/09/21 06:53:23 Importing OpenAPI specifications from http://127.0.0.1:31717/api.ch.gov.uk-specifications/swagger-2.0/spec/streaming.json
@@ -95,7 +95,3 @@ The specs which are intended for the private web site are listed [here](https://
 
 
 In particular, company-accounts.json comes (indirectly) sourced [here](https://github.com/companieshouse/dapperdox.developer.ch.gov.uk/blob/9571799/spec_args.sh#L28) via filings.json
-
-
-
-
