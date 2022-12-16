@@ -18,6 +18,9 @@ status code for each request made within the remainder of the
 five-minute window. At the end of the period, your rate limit will reset
 back to its maximum value of 600 requests.
 
+We reserve the right to ban without notice applications that regularly 
+exceed or attempt to bypass the rate limits.
+
 Increasing your rate limit
 --------------------------
 
