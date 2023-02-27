@@ -95,3 +95,7 @@ The specs which are intended for the private web site are listed [here](https://
 
 
 In particular, company-accounts.json comes (indirectly) sourced [here](https://github.com/companieshouse/dapperdox.developer.ch.gov.uk/blob/9571799/spec_args.sh#L28) via filings.json
+
+## Docker
+To run this service locally in Docker, simply enable the `dapperdox-developer-ch-gov-uk` service.
+The specs can then be accessed at [http://developer-specs.chs.local](http://developer-specs.chs.local)
