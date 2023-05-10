@@ -13,7 +13,7 @@ WORKDIR /opt
 
 RUN dnf install -y zip gzip tar aws-cli \
     && dnf clean all \
-    && aws s3 cp s3://${S3_RELEASE_BUCKET}/dapperdox.developer.ch.gov.uk/${FILE_NAME} . \
+    && aws s3 cp s3://${S3_RELEASE_BUCKET}/${APPLICATION_NAME}/${FILE_NAME} . \
     && unzip ${FILE_NAME} \
     && rm -f ${FILE_NAME}
 
