@@ -12,7 +12,7 @@ ARG PORT="10000"
 
 WORKDIR /opt
 
-COPY docker_start.sh .
+COPY . .
 
 RUN dnf install -y zip gzip tar aws-cli \
     && dnf clean all \
