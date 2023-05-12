@@ -1,4 +1,4 @@
-#!/usr/bin/env ash
+#!/bin/bash
 #
 # Docker start script for developer.gov.uk
 
