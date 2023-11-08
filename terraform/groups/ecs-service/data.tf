@@ -37,7 +37,7 @@ data "aws_iam_role" "ecs_cluster_iam_role" {
 data "aws_lb" "dev_specs_lb" {
   name = "dev-specs-${var.environment}-lb"
 }
-data "aws_lb_listener" "dev-specs-lb-listener" {
+data "aws_lb_listener" "dev_specs_lb_listener" {
   load_balancer_arn = data.aws_lb.dev_specs_lb.arn
   port              = 443
 }
