@@ -3,10 +3,9 @@ data "vault_generic_secret" "stack_secrets" {
   path = "applications/${var.aws_profile}/${var.environment}/${local.stack_name}-stack"
 }
 
-# Not used in dapperdox at the moment
-#data "vault_generic_secret" "service_secrets" {
-#  path = "applications/${var.aws_profile}/${var.environment}/${local.stack_name}-stack/${local.service_name}"
-#}
+data "vault_generic_secret" "service_secrets" {
+  path = "applications/${var.aws_profile}/${var.environment}/${local.stack_name}-stack/${local.service_name}"
+}
 
 data "aws_kms_key" "kms_key" {
   key_id = local.kms_alias

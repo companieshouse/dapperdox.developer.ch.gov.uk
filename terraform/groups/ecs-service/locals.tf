@@ -18,12 +18,15 @@ locals {
   stack_secrets              = jsondecode(data.vault_generic_secret.stack_secrets.data_json)
   application_subnet_pattern = local.stack_secrets["application_subnet_pattern"]
 
+  service_secrets            = jsondecode(data.vault_generic_secret.service_secrets.data_json)
+
   # create a map of secret name => secret arn to pass into ecs service module
   # using the trimprefix function to remove the prefixed path from the secret name
   secrets_arn_map = {
     for sec in data.aws_ssm_parameter.secret :
     trimprefix(sec.name, "/${local.name_prefix}/") => sec.arn
   }
+
   global_secrets_arn_map = {
     for sec in data.aws_ssm_parameter.global_secret :
     trimprefix(sec.name, "/${local.global_prefix}/") => sec.arn
@@ -39,10 +42,25 @@ locals {
     }
   ]
 
-  # Dapperdox secrets to go in list
-  task_secrets = concat(local.global_secret_list,[])
+  service_secrets_arn_map = {
+    for sec in module.secrets.secrets:
+      trimprefix(sec.name, "/${local.service_name}-${var.environment}/") => sec.arn
+  }
 
-  task_environment = concat(local.ssm_global_version_map,[
+  service_secret_list = flatten([for key, value in local.service_secrets_arn_map : 
+    { "name" = upper(key), "valueFrom" = value }
+  ])
+
+  ssm_service_version_map = [
+    for sec in module.secrets.secrets : {
+      name = "${replace(upper(local.service_name), "-", "_")}_${var.ssm_version_prefix}${replace(upper(basename(sec.name)), "-", "_")}", value = sec.version
+    }
+  ]
+
+  # Dapperdox secrets to go in list
+  task_secrets = concat(local.service_secret_list,local.global_secret_list,[])
+
+  task_environment = concat(local.ssm_global_version_map,local.ssm_service_version_map,[
     { "name" : "PORT", "value" : local.container_port },
     { "name" : "LOGLEVEL", "value" : var.log_level },
     { "name" : "INCLUDE_API_FILING_PUBLIC_SPECS", "value" : var.include_api_filing_public_specs },
