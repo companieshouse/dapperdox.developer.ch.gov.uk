@@ -19,7 +19,7 @@ terraform {
 }
 
 module "ecs-service" {
-  source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-service?ref=1.0.218"
+  source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-service?ref=1.0.220"
 
   # Environmental configuration
   environment             = var.environment
@@ -35,7 +35,7 @@ module "ecs-service" {
   lb_listener_paths               = local.lb_listener_paths
 
   # ECS Task container health check
-  use_task_container_healthcheck = false
+  use_task_container_healthcheck = true
   healthcheck_path          = local.healthcheck_path
   healthcheck_matcher       = local.healthcheck_matcher
 
