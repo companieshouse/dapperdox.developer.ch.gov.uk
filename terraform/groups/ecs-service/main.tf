@@ -80,3 +80,7 @@ module "secrets" {
   kms_key_id  = data.aws_kms_key.kms_key.id
   secrets     = nonsensitive(local.service_secrets)
 }
+
+resource "aws_alb" "bad_example" {
+    internal = false
+ }
