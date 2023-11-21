@@ -33,6 +33,10 @@ data "aws_iam_role" "ecs_cluster_iam_role" {
   name = "${local.name_prefix}-ecs-task-execution-role"
 }
 
+data "aws_iam_role" "ecs_task_role" {
+  name = "${local.name_prefix}-ecs-task-role"
+}
+
 data "aws_lb" "dev_specs_lb" {
   name = "dev-specs-${var.environment}-lb"
 }
