@@ -5,11 +5,12 @@ SortOrder: 100
 
 Companies House API Filing service allows 3rd party software to file certain forms and change certain company data with Companies House.
 
-API Filing initially exposes two API services:
+API Filing initially exposes four API services:
 
 - `Transactions API`. This API provides the generic model that encapsulates all other API Filing services. A transaction is best thought of as an envelope for one or more data changes or forms.
 - `Registered Office Address (ROA) API`. This API provides the specific ROA data change functionality. An ROA data change can be added to a transaction before the transaction is submitted to Companies House.
 - `Insolvency API`. This API provides the specific insolvency data change functionality - for example to open an insolvency case and appoint an insolvency practitioner (equivalent to the paper '600' form). An insolvency data change can be added to a transaction before the transaction is submitted to Companies House.
+- `Registered Email Address (REA) API`. This API provides the specific REA data change functionality. A registered email address data change can be added to a transaction before the transaction is submitted to Companies House. Also note that this service is to update the registered email address, it cannot be used to provide an initial registered email address.
 
 # Authentication
 
@@ -36,6 +37,7 @@ Depending on the filing functionality the list of scopes may change.
 | Transactions (pre-requisite for all other APIs) | `https://identity.company-information.service.gov.uk/user/profile.read` | |
 | Registered Office Address (ROA) | `https://api.company-information.service.gov.uk/company/{company_number}/registered-office-address.update` | Note that the `{company_number}` placeholder must be filled in with an actual company number e.g. for company `00000001` this scope would be `https://api.company-information.service.gov.uk/company/00000001/registered-office-address.update`. |
 | Insolvency | `https://api.company-information.service.gov.uk/company/*/insolvency.write-full` | Due to the sensitivity of insolvency endpoints, this scope can only be granted to a client (i.e. your software) if your client_id is registered with Companies House as a recognised insolvency software - regardless of whether or not the user granting the scope is a registered insolvency practitioner. |
+| Registered Email Address (REA) | `https://api.company-information.service.gov.uk/company/{company_number}/registered-email-address.update` | Note that the {company_number} placeholder must be filled in with an actual company number e.g. for company 00000001 this scope would be https://api.company-information.service.gov.uk/company/00000001/registered-email-address.update. |
 
 
 Combining multiple scopes is done by space separating them as one string so the requested scope for API Filing an ROA data change for company `00000001` should request the scope:
@@ -132,6 +134,10 @@ For ROA data change submissions made using the Transactions and ROA API's the fo
 For Insolvency data change submissions made using the Transactions and Insolvency APIs, the following scenarios:
 
 - Postcode of the first insolvency practitioner associated with the case matches one of the postcodes of a Companies House office ("CF143UZ", "BT28BG", "SW1H9EX" or "EH39FF")
+
+For REA data change submissions made using the Transactions and REA API’s the following scenarios:
+
+- Registered email address ending in "@companieshouse.gov.uk"
 
 All other submissions will receive a mock response status of `accepted`.
 
