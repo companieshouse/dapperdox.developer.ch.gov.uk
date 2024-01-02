@@ -127,7 +127,7 @@ The Sandbox test data api allows test companies to be generated on demand for us
 
 The Sandbox environment will automatically respond to all test filing submissions and update the filing status to either `accepted` or, in specific cases documented below, `rejected` with specific reject reasons.
 
-For ROA data change submissions made using the Transactions and ROA API's the following scenarios:
+For ROA data change submissions made using the Transactions and ROA APIs, the following scenarios:
 
 - Postcode matches one of the postcodes of a Companies House office ("CF143UZ", "BT28BG", "SW1H9EX" or "EH39FF")
 
