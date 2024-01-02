@@ -135,7 +135,7 @@ For Insolvency data change submissions made using the Transactions and Insolvenc
 
 - Postcode of the first insolvency practitioner associated with the case matches one of the postcodes of a Companies House office ("CF143UZ", "BT28BG", "SW1H9EX" or "EH39FF")
 
-For REA data change submissions made using the Transactions and REA API’s the following scenarios:
+For REA data change submissions made using the Transactions and REA APIs, the following scenarios:
 
 - Registered email address ending in "@companieshouse.gov.uk"
 
