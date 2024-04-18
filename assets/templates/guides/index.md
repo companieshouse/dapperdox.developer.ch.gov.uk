@@ -9,7 +9,7 @@ Overview
 --------
 
 Companies House is an executive agency of the Department for Business
-Innovation and Skills. Our main functions are to incorporate and
+and Trade. Our main functions are to incorporate and
 dissolve limited companies; examine and store company information
 delivered under the Companies Act and related legislation; and make this
 information available to the public.
