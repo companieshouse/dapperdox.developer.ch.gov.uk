@@ -11,7 +11,7 @@ step of [exchanging this authorisation code for an access token](/companies-hous
 ### Example
 
 ```
-GET /oauth2/authorisation?scope=https://identity.company-information.service.gov.uk/user/profile.read%20https://api.company-information.service.gov.uk/company/00000000/registered-office-address.update&redirect_uri=https://somewhere.example.com/oauthcallback&response_type=code&client_id=6ghe7938zhd821hf&state=some_application_state_string HTTP/1.1
+GET /oauth2/authorise?scope=https://identity.company-information.service.gov.uk/user/profile.read%20https://api.company-information.service.gov.uk/company/00000000/registered-office-address.update&redirect_uri=https://somewhere.example.com/oauthcallback&response_type=code&client_id=6ghe7938zhd821hf&state=some_application_state_string HTTP/1.1
 ```
 
 #### Handling the response
