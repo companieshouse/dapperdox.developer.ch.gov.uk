@@ -36,5 +36,5 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/item-group-workflow-api.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/document-signing-api.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/officer-filing.json"
-    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator-private.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json"
 fi
