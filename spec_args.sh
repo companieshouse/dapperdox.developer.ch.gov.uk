@@ -11,7 +11,7 @@ if [[ "${INCLUDE_API_FILING_PUBLIC_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=document.api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=account.ch.gov.uk-specifications/swagger-2.0/identity-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings-public.json"
-    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/pscDiscrepancies.json"
 fi
 
@@ -36,4 +36,5 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/item-group-workflow-api.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/document-signing-api.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=private.api.ch.gov.uk-specifications/swagger-2.0-private/spec/officer-filing.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator.json"
 fi

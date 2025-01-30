@@ -82,13 +82,12 @@ The list of public specs rendered can be quickly checked, for example, looking a
     2022/09/21 06:53:23 [hGCMdfLitTqwLUecgOcz] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/spec/transactions.json (200, 62.257µs)
     2022/09/21 06:53:23 [XTbRMGxqPexOUAbUdQrI] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/models/transactions.json (200, 50.741µs)
     2022/09/21 06:53:23 [PjyQyQFStFubVVdHtAkn] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/models/insolvency.json (200, 49.772µs)
-    2022/09/21 06:53:23 Importing OpenAPI specifications from http://127.0.0.1:31717/api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json
-    2022/09/21 06:53:23 [jEQxCqkDIfTGXeJtuncb] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json (200, 61.637µs)
-    2022/09/21 06:53:23 [fqQUsXTOdPORvAUkAwww] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/spec/testDataGenerator.json (200, 54.567µs)
+    2025/01/30 14:56:05 Importing OpenAPI specifications from http://127.0.0.1:4004/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json
+    2025/01/30 14:56:05 [VrSQXUexHwBIKpQtYnYH] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json (200, 33.959µs)
+    2025/01/30 14:56:05 [NsvqvYpPFOAmfqdsdQnm] [info] GET /api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json (200, 41.333µs)
     2022/09/21 06:53:23 Registering reference documentation
     2022/09/21 06:53:23 Registering guides
     2022/09/21 06:53:23 listening on 0.0.0.0:31717 for unsecured connections
-
 It's worth noticing that company-accounts.json, for example, is actually not listed in the above stderr.
 
 The specs which are intended for the private web site are listed [here](https://github.com/companieshouse/dapperdox.developer.ch.gov.uk/blob/9571799/spec_args.sh#L24-L35) (directly or indirectly).
