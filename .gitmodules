@@ -4,7 +4,6 @@
 [submodule "specs/api.ch.gov.uk-specifications"]
 	path = specs/api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/api.ch.gov.uk-specifications.git
-	branch=feature/playw-514-acsp-documentation
 [submodule "specs/private.api.ch.gov.uk-specifications"]
 	path = specs/private.api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/private.api.ch.gov.uk-specifications.git
