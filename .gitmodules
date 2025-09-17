@@ -1,9 +1,11 @@
 [submodule "dapperdox"]
 	path = dapperdox
 	url = git@github.com:dapperdox/dapperdox.git
+	branch =  feature/update-certificates-add-missing-image-deliveries
 [submodule "specs/api.ch.gov.uk-specifications"]
 	path = specs/api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/api.ch.gov.uk-specifications.git
+	branch = feature/add-missing-image-deliveries-update-certificates
 [submodule "specs/private.api.ch.gov.uk-specifications"]
 	path = specs/private.api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/private.api.ch.gov.uk-specifications.git
