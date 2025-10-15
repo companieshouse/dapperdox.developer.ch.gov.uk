@@ -1,11 +1,9 @@
 [submodule "dapperdox"]
 	path = dapperdox
 	url = git@github.com:dapperdox/dapperdox.git
-	branch = feature/add-tdg-undeliverable-registered-office-address-field
 [submodule "specs/api.ch.gov.uk-specifications"]
 	path = specs/api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/api.ch.gov.uk-specifications.git
-	branch = feature/undeliverable-officer-address
 [submodule "specs/private.api.ch.gov.uk-specifications"]
 	path = specs/private.api.ch.gov.uk-specifications
 	url = git@github.com:companieshouse/private.api.ch.gov.uk-specifications.git
