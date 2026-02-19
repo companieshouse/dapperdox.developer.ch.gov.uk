@@ -1,3 +1,20 @@
 .user_info {
 color: black;
 }
+
+body {
+	padding-top: 73px;  
+    margin-bottom: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	color: black;
+	font-size: 16px;
+}
+
+.navbar {
+    background-color: #1d70b8;
+    padding-top: 0px;
+    padding-bottom:0px;
+    margin-bottom: 0;
+    border-radius: 0;
+}
