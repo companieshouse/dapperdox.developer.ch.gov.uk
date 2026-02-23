@@ -6,6 +6,8 @@ RUN apk add --no-cache git openssh-client build-base
 
 RUN git config --global url."git@github.com:".insteadOf https://github.com/
 
+RUN apk add --no-cache curl
+
 WORKDIR /build
 
 ARG SSH_PRIVATE_KEY
@@ -32,6 +34,8 @@ RUN cp "${GOPATH}/src/github.com/dapperdox/dapperdox/dapperdox" /build/dapperdox
 FROM alpine:3.12
 
 WORKDIR /app
+
+RUN apk add --no-cache curl
 
 COPY --from=builder /build ./
 
