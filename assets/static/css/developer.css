@@ -3,7 +3,7 @@ color: black;
 }
 
 body {
-	padding-top: 53px;  
+	padding-top: 73px;  
     margin-bottom: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
@@ -17,4 +17,8 @@ body {
     padding-bottom:0px;
     margin-bottom: 0;
     border-radius: 0;
+}
+
+a.govuk-header__link.govuk-header__link--homepage {
+    color: #fff !important;
 }
