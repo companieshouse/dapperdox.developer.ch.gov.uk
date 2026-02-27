@@ -38,7 +38,7 @@
     <title>[: .Info.Title :]: [: .Title :]</title>
   </head>
 
-<body [: if .Config.ShowAssets :][: if not .Guide :] class="debug_body" [: end :] [: end :]>
+<body class="govuk-frontend-supported govuk-template__body js-enabled" [: if .Config.ShowAssets :][: if not .Guide :] class="debug_body" [: end :] [: end :]>
   <nav class="navbar navbar-fixed-top shadow">
     <div class="container-fluid">
       [: template "fragments/header_bar" . :]
@@ -47,18 +47,19 @@
 
   <section aria-label="Service information" class="govuk-service-navigation"
   data-module="govuk-service-navigation">
-  <div class="govuk-width-container">
-    <div class="govuk-service-navigation__container">
-      <span class="govuk-service-navigation__service-name">
-        <a href="#" class="govuk-service-navigation__link">
-          Developer API Suite
-        </a>
-      </span>
-    </div>
-  </div>
-</section>
 
- 
+      <div class="govuk-service-navigation__container">
+        <div class="col-lg-1 hidden-xs hidden-sm hidden-md"></div>
+        <div class="govuk-header__container govuk-width-container col-xs-12 col-sm-12 col-md-12 col-lg-10 govuk-label-wrapper">
+          <span class="govuk-service-navigation__service-name"> 
+            <a href="/" class="govuk-service-navigation__link">
+              Developer API Suite
+            </a>
+          </span>
+        </div>
+      </div>
+  </section>
+
   <div> 
     <div class="row">
         <div class="hidden-md col-lg-1 hidden-xs hidden-sm"></div>
