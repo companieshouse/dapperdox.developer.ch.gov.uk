@@ -47,3 +47,7 @@ a.govuk-header__link.govuk-header__link--homepage:focus::after,
 a.govuk-header__link.govuk-header__link--homepage:active::after {
     background: #0b0c0c;
 }
+
+.govuk-footer-copyright-text {
+    padding-left: 35px;
+}
