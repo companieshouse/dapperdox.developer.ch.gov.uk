@@ -19,6 +19,7 @@ fi
 # This should be used for specs that are going to be public but currently not ready to be made publicly available
 if [[ "${INCLUDE_PENDING_PUBLIC_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/payments.json" # pending public payment api specs
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/strike-off-partner-objections.json" # pending public objections api specs
 fi
 
 
