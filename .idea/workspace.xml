@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e64733e-d387-4da5-b7e2-9202f96e13ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/spec_args.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spec_args.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications" beforeDir="false" afterPath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-internal-v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-internal-v2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-internal.json" beforeDir="false" afterPath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-internal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public-v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public-v2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json" beforeDir="false" afterPath="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/specs/api.ch.gov.uk-specifications" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3B2eK6lkkIZS1lnQ7rYubUjG3wV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/tdg-186-set-correct-officer-types-for-limited-partnerships-companies",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="dapperdox.developer.ch.gov.uk" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="dapperdox.developer.ch.gov.uk" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e64733e-d387-4da5-b7e2-9202f96e13ac" name="Changes" comment="" />
+      <created>1773691525867</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773691525867</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -6,24 +6,24 @@ SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/
 
 
 # Pending public spec files for API Filing initial release
-if [[ "${INCLUDE_API_FILING_PUBLIC_SPECS}" -eq "1" ]]; then
+#if [[ "${INCLUDE_API_FILING_PUBLIC_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=document.api.ch.gov.uk-specifications/swagger-2.0/spec/swagger.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=account.ch.gov.uk-specifications/swagger-2.0/identity-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public.json"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/pscDiscrepancies.json"
-fi
+#fi
 
 # Pending public spec files should be added to this block
 # This should be used for specs that are going to be public but currently not ready to be made publicly available
-if [[ "${INCLUDE_PENDING_PUBLIC_SPECS}" -eq "1" ]]; then
+#if [[ "${INCLUDE_PENDING_PUBLIC_SPECS}" -eq "1" ]]; then
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/payments.json" # pending public payment api specs
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/strike-off-partner-objections.json" # pending public objections api specs
-fi
+#fi
 
 # Only private/internal spec files should be added to this block
-if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
+#if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     echo "Including private specs"
     SPEC_ARGS="${SPEC_ARGS} -spec-rewrite-url=http://localhost:3123/swagger-2.0-private=http://127.0.0.1:${PORT}/private.api.ch.gov.uk-specifications/swagger-2.0-private"
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/filings.json" # private filing api specs
@@ -41,4 +41,4 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     # Note: test-data-generator-public-v2.json is temporarily treated as a private spec because the corresponding V2 endpoints
     # are not yet publicly accessible. This ensures the evolving V2 contract remains hidden from external consumers until the public rollout is complete.
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public-v2.json"
-fi
+#fi
