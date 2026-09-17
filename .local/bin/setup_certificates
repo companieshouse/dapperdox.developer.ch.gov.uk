@@ -1,0 +1,12 @@
+#!/bin/sh
+
+iboss_certificate="${1}"
+
+if [ -n "${iboss_certificate}" ]; then
+    echo "Setting up iboss certificate..."
+    printf '%s\n' "${iboss_certificate}" > /usr/local/share/ca-certificates/iboss.crt
+    update-ca-certificates
+else
+    echo "No iboss certificate provided. Exiting."
+    exit 1
+fi
