@@ -41,4 +41,5 @@ if [[ "${INCLUDE_PRIVATE_SPECS}" -eq "1" ]]; then
     # Note: test-data-generator-public-v2.json is temporarily treated as a private spec because the corresponding V2 endpoints
     # are not yet publicly accessible. This ensures the evolving V2 contract remains hidden from external consumers until the public rollout is complete.
     SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-public-v2.json"
+    SPEC_ARGS="${SPEC_ARGS} -spec-filename=api.ch.gov.uk-specifications/swagger-2.0/spec/test-data-generator-combined.json"
 fi
