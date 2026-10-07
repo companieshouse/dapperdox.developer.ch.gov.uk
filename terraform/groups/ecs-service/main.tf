@@ -30,14 +30,14 @@ module "ecs-service" {
   task_execution_role_arn = data.aws_iam_role.ecs_cluster_iam_role.arn
 
   # Load balancer configuration
-  lb_listener_arn                 = data.aws_lb_listener.dev_specs_lb_listener.arn
-  lb_listener_rule_priority       = local.lb_listener_rule_priority
-  lb_listener_paths               = local.lb_listener_paths
+  lb_listener_arn           = data.aws_lb_listener.dev_specs_lb_listener.arn
+  lb_listener_rule_priority = local.lb_listener_rule_priority
+  lb_listener_paths         = local.lb_listener_paths
 
   # ECS Task container health check
   use_task_container_healthcheck = true
-  healthcheck_path          = local.healthcheck_path
-  healthcheck_matcher       = local.healthcheck_matcher
+  healthcheck_path               = local.healthcheck_path
+  healthcheck_matcher            = local.healthcheck_matcher
 
   # Docker container details
   docker_registry   = var.docker_registry
@@ -66,10 +66,10 @@ module "ecs-service" {
   cloudwatch_alarms_enabled = var.cloudwatch_alarms_enabled
 
   # Service environment variable and secret configs
-  task_environment            = local.task_environment
-  task_secrets                = local.task_secrets
-  app_environment_filename    = local.app_environment_filename
-  use_set_environment_files   = local.use_set_environment_files
+  task_environment          = local.task_environment
+  task_secrets              = local.task_secrets
+  app_environment_filename  = local.app_environment_filename
+  use_set_environment_files = local.use_set_environment_files
 }
 
 module "secrets" {
