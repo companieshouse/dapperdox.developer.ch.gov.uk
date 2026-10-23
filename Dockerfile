@@ -12,6 +12,7 @@ WORKDIR /build
 
 ARG SSH_PRIVATE_KEY
 ARG SSH_PRIVATE_KEY_PASSPHRASE
+ARG IBOSS_CERTIFICATE=""
 
 RUN mkdir -m 0600 ~/.ssh \
     && ssh-keyscan github.com >> ~/.ssh/known_hosts \
@@ -21,7 +22,9 @@ RUN mkdir -m 0600 ~/.ssh \
 
 COPY . ./
 
-RUN git submodule init && git submodule update && mkdir -p "${GOPATH}/src/github.com/dapperdox/dapperdox" && cp -r dapperdox/* "${GOPATH}/src/github.com/dapperdox/dapperdox/"
+RUN chmod +x ./.local/bin/setup_certificates \
+    && sh -e ./.local/bin/setup_certificates "${IBOSS_CERTIFICATE}" \
+    && git submodule init && git submodule update && mkdir -p "${GOPATH}/src/github.com/dapperdox/dapperdox" && cp -r dapperdox/* "${GOPATH}/src/github.com/dapperdox/dapperdox/"
 
 WORKDIR /"${GOPATH}"/src/github.com/dapperdox/dapperdox
 
