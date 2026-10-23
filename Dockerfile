@@ -1,6 +1,7 @@
 FROM golang:1.15-alpine as builder
 
 ENV GOPRIVATE="github.com/companieshouse"
+ENV GONOPROXY="github.com/companieshouse/*,github.com/*,go.mongodb.org/*"
 
 RUN apk add --no-cache git openssh-client build-base
 
