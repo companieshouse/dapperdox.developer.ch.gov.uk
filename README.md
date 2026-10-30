@@ -100,5 +100,7 @@ To run this service locally in Docker, simply enable the `dapperdox-developer-ch
 The specs can then be accessed at [http://developer-specs.chs.local](http://developer-specs.chs.local)
 
 
+## Confluence links
 
-
+- [Short Read](https://companieshouse.atlassian.net/wiki/spaces/~623250955/pages/2627731659/Step+By+Step+Guide+to+Add+the+specs+to+Dapperdox) - Step By Step Guide to Add the specs to Dapperdox
+- [Longer Read](https://companieshouse.atlassian.net/wiki/spaces/S4/pages/4106748052/Working+with+DapperDox+API+specs) - This includes the above "Short Read" and adds more background information.
